@@ -1,0 +1,11 @@
+{
+  "name": "renew-formalism",
+  "description": "An abstract formalism to extend from",
+  "version": "0.1.0",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+
+  }
+}
