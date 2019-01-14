@@ -5,26 +5,20 @@ export class Plugin {
 
     /**
      * @abstract
-     * @returns object
+     * @returns MetaModel
      */
-    getMetaModel () {
-        return {};
-    }
+    getMetaModel () { return null; }
 
     /**
      * @abstract
-     * @returns object
+     * @returns Stylesheet
      */
-    getStylesheet () {
-        return {};
-    }
+    getStylesheet () { return null; }
 
     /**
      * @abstract
-     * @returns object
+     * @returns ToolConfiguration
      */
-    getToolConfiguration () {
-        return {};
-    }
+    getToolConfiguration () { return null; }
 
 }
