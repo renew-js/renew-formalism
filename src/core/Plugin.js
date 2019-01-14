@@ -1,7 +1,7 @@
 /**
  * @abstract
  */
-class Plugin {
+export class Plugin {
 
     /**
      * @abstract
