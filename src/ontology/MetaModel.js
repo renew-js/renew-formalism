@@ -1,5 +1,4 @@
 export class MetaModel {
-
     constructor () {
         this.type = '';
         this.classifiers = [];
@@ -12,8 +11,7 @@ export class MetaModel {
      * @return {MetaModel}
      */
     static fromJson (metaModel) {
-        let model = new MetaModel();
+        const model = new MetaModel();
         return model;
     }
-
 }

@@ -1,24 +1,28 @@
 /**
  * @abstract
  */
-export class Plugin {
+export default class Plugin {
+    /**
+     * @abstract
+     * @return {MetaModel}
+     */
+    getMetaModel () {
+        return null;
+    }
 
     /**
      * @abstract
-     * @returns MetaModel
+     * @return {Stylesheet}
      */
-    getMetaModel () { return null; }
+    getStylesheet () {
+        return null;
+    }
 
     /**
      * @abstract
-     * @returns Stylesheet
+     * @return {ToolConfiguration}
      */
-    getStylesheet () { return null; }
-
-    /**
-     * @abstract
-     * @returns ToolConfiguration
-     */
-    getToolConfiguration () { return null; }
-
+    getToolConfiguration () {
+        return null;
+    }
 }

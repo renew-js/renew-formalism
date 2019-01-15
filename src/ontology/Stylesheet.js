@@ -1,5 +1,4 @@
 export class Stylesheet {
-
     constructor (props) {
         this.classifierStyles = [];
         this.relationStyles = [];
@@ -12,8 +11,7 @@ export class Stylesheet {
      * @return {Stylesheet}
      */
     static fromJson (stylesheet) {
-        let style = new Stylesheet();
+        const style = new Stylesheet();
         return style;
     }
-
 }

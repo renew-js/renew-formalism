@@ -1,11 +1,10 @@
 export class ToolConfiguration {
-
     constructor () {
         this.modelingToolDefinitions = {
             toolName: '',
             targetModel: '',
             fileDescription: '',
-            fileExtension: ''
+            fileExtension: '',
         };
         this.toolMappings = [];
     }
@@ -16,8 +15,7 @@ export class ToolConfiguration {
      * @return {ToolConfiguration}
      */
     static fromJson (toolConfiguration) {
-        let configuration = new ToolConfiguration();
+        const configuration = new ToolConfiguration();
         return configuration;
     }
-
 }
