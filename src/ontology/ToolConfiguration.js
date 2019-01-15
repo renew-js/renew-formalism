@@ -10,4 +10,14 @@ export class ToolConfiguration {
         this.toolMappings = [];
     }
 
+    /**
+     *
+     * @param {Object} toolConfiguration
+     * @return {ToolConfiguration}
+     */
+    static fromJson (toolConfiguration) {
+        let configuration = new ToolConfiguration();
+        return configuration;
+    }
+
 }

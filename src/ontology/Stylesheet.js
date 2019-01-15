@@ -6,4 +6,14 @@ export class Stylesheet {
         this.textStyles = [];
     }
 
+    /**
+     *
+     * @param {Object} stylesheet
+     * @return {Stylesheet}
+     */
+    static fromJson (stylesheet) {
+        let style = new Stylesheet();
+        return style;
+    }
+
 }
