@@ -1,3 +1,6 @@
+import { ClassifierStyle } from './stylesheet/ClassifierStyle';
+
+
 export class Stylesheet {
     constructor (props) {
         this.classifierStyles = [];
@@ -7,11 +10,14 @@ export class Stylesheet {
 
     /**
      *
-     * @param {Object} stylesheet
+     * @param {Object} ontology
      * @return {Stylesheet}
      */
-    static fromJson (stylesheet) {
-        const style = new Stylesheet();
-        return style;
+    static fromJson (ontology) {
+        const stylesheet = new Stylesheet();
+        ontology['classifier-styles'].forEach(style => {
+            stylesheet.classifierStyles.push(ClassifierStyle.fromJson(style));
+        });
+        return stylesheet;
     }
 }

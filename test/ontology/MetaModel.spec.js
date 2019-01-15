@@ -1,5 +1,6 @@
 import { MetaModel } from '../../src/ontology/MetaModel';
 
+
 describe('ontology/MetaModel', () => {
     let metaModel = {
         "type": "test-net",
@@ -31,11 +32,13 @@ describe('ontology/MetaModel', () => {
 
     describe("parse json", () => {
         it('should parse the MetaModel type', () => {
-            expect(MetaModel.fromJson(metaModel).type).to.be.eqls(metaModel.type);
+            expect(MetaModel.fromJson(metaModel).type)
+                .to.be.eqls(metaModel.type);
         });
 
         it('should be 2 different classifiers', () => {
-            expect(MetaModel.fromJson(metaModel).classifiers).size(metaModel.classifiers.length);
+            expect(MetaModel.fromJson(metaModel).classifiers.length)
+                .to.be.eqls(metaModel.classifiers.length);
         });
     });
 
