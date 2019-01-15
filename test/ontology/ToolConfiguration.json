@@ -1,0 +1,23 @@
+{
+  "tool-name": "Test Editor",
+  "target-model": "test-net",
+  "file-description": "Test Model",
+  "file-extension": "test",
+  "tool-mappings": [
+    {
+      "target-type": "classifier_1",
+      "tool-title": "Create classifier_1",
+      "icon": "path-to-svg"
+    },
+    {
+      "target-type": "relation_1",
+      "tool-title": "Create relation_1",
+      "icon": "path-to-svg"
+    },
+    {
+      "target-type": "text_1",
+      "tool-title": "Create text_1",
+      "icon": "path-to-svg"
+    }
+  ]
+}
