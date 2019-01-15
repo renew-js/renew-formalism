@@ -2,10 +2,27 @@
   "name": "renew-formalism",
   "description": "An abstract formalism to extend from",
   "version": "0.1.0",
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "devDependencies": {
-
+    "eslint": "^5.12.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-config-renew": "git+https://github.com/uni-hamburg/eslint-config-renew.git"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "google",
+      "renew"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "sourceType": "module"
+    }
   }
 }
