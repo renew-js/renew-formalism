@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "rollup -cw",
+    "karma-chrome": "karma start karma.conf.js --log-level debug --browsers Chrome",
+    "karma-firefox": "karma start karma.conf.js --log-level debug --browsers Firefox",
     "lint": "eslint src --fix",
     "prebuild": "eslint src",
     "build": "rollup -c --environment BUILD:production"
