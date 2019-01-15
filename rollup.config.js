@@ -9,7 +9,7 @@ export default {
     input: 'index.js',
     output: {
         file: 'dist/renew-formalism.js',
-        name: 'Formalism',
+        name: 'formalism',
         format: 'umd',
     },
     plugins: [
