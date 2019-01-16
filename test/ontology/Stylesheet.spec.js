@@ -6,6 +6,7 @@ describe('ontology/Stylesheet', () => {
         "classifier-styles": [
             {
                 "target-type": "classifier_1",
+                "representation": "classifier_1.svg",
                 "default-dimension": {
                     "width": 10,
                     "height": 10
@@ -16,6 +17,7 @@ describe('ontology/Stylesheet', () => {
             },
             {
                 "target-type": "classifier_2",
+                "representation": "classifier_2.svg",
                 "default-dimension": {
                     "width": 10,
                     "height": 10
@@ -45,7 +47,7 @@ describe('ontology/Stylesheet', () => {
         ]
     };
 
-    describe("ontology/Stylesheet", () => {
+    describe("ClassifierStyle", () => {
         it('should parse classifier styles', () => {
             expect(Stylesheet.fromJson(stylesheet).classifierStyles.length)
                 .to.be.eqls(stylesheet['classifier-styles'].length);
@@ -75,6 +77,14 @@ describe('ontology/Stylesheet', () => {
                 .to.be.eqls(ontologyStyle['line-color']);
             expect(classifierStyle.lineStyle)
                 .to.be.eqls(ontologyStyle['line-style']);
+        });
+
+        it('should parse representation correctly', () => {
+            let ontologyStyle = stylesheet['classifier-styles'][1];
+            let classifierStyle = Stylesheet.fromJson(stylesheet).classifierStyles[1];
+
+            expect(classifierStyle.representation)
+                .to.be.eqls(ontologyStyle.representation);
         });
     });
 

@@ -20,6 +20,7 @@ export class ClassifierStyle {
             ontologyStyle['default-dimension'].width,
             ontologyStyle['default-dimension'].height
         );
+        classifierStyle.representation = ontologyStyle['representation'];
         classifierStyle.backgroundColor = ontologyStyle['background-color'];
         classifierStyle.lineColor = ontologyStyle['line-color'];
         classifierStyle.lineStyle = ontologyStyle['line-style'];
