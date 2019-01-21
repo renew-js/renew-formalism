@@ -1,4 +1,4 @@
-import { ClassifierStyle } from './stylesheet/ClassifierStyle';
+import { ToolMapping } from './toolconfiguration/ToolMapping';
 
 
 export class ToolConfiguration {
@@ -22,10 +22,11 @@ export class ToolConfiguration {
         configuration.fileDescription = toolConfiguration['file-description'];
         configuration.fileExtension = toolConfiguration['file-extension'];
         try {
-            toolConfiguration['tool-mappings'].forEach(mapping => {
+            toolConfiguration['tool-mappings'].forEach((mapping) => {
                 configuration.toolMappings.push(ToolMapping.fromJson(mapping));
             });
         } catch (e) {
+            console.error(e);
             console.log('no tool mappings');
         }
         return configuration;

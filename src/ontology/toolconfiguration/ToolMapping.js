@@ -1,4 +1,4 @@
-class ToolMapping {
+export class ToolMapping {
     constructor (targetType) {
         this.targetType = targetType;
         this.title = '';
@@ -6,7 +6,7 @@ class ToolMapping {
     }
 
     static fromJson (toolMapping) {
-        let mapping = new ToolMapping(toolMapping['target-type']);
+        const mapping = new ToolMapping(toolMapping['target-type']);
         mapping.title = toolMapping['tool-title'];
         mapping.icon = toolMapping['icon'];
         return mapping;

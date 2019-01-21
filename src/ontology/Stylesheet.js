@@ -15,7 +15,7 @@ export class Stylesheet {
      */
     static fromJson (ontology) {
         const stylesheet = new Stylesheet();
-        ontology['classifier-styles'].forEach(style => {
+        ontology['classifier-styles'].forEach((style) => {
             stylesheet.classifierStyles.push(ClassifierStyle.fromJson(style));
         });
         return stylesheet;

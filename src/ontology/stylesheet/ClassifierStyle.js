@@ -10,7 +10,7 @@ export class ClassifierStyle {
     setDimension (width, height) {
         this.defaultDimension = {
             width: width,
-            height: height
+            height: height,
         };
     }
 
