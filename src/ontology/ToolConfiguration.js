@@ -21,9 +21,13 @@ export class ToolConfiguration {
         configuration.targetModel = toolConfiguration['target-model'];
         configuration.fileDescription = toolConfiguration['file-description'];
         configuration.fileExtension = toolConfiguration['file-extension'];
-        configuration['tool-mappings'].forEach(mapping => {
-            configuration.toolMappings.push(ToolMapping.fromJson(mapping));
-        });
+        try {
+            toolConfiguration['tool-mappings'].forEach(mapping => {
+                configuration.toolMappings.push(ToolMapping.fromJson(mapping));
+            });
+        } catch (e) {
+            console.log('no tool mappings');
+        }
         return configuration;
     }
 }
