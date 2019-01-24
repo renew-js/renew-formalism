@@ -1,4 +1,5 @@
 import { ClassifierStyle } from './stylesheet/ClassifierStyle';
+import { RelationStyle } from './stylesheet/RelationStyle';
 
 
 export class Stylesheet {
@@ -17,6 +18,9 @@ export class Stylesheet {
         const stylesheet = new Stylesheet();
         ontology['classifier-styles'].forEach((style) => {
             stylesheet.classifierStyles.push(ClassifierStyle.fromJson(style));
+        });
+        ontology['relation-styles'].forEach((style) => {
+            stylesheet.relationStyles.push(RelationStyle.fromJson(style));
         });
         return stylesheet;
     }
