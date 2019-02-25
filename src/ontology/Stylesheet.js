@@ -1,3 +1,4 @@
+import { ArrowHeadStyle } from './stylesheet/ArrowHeadStyle';
 import { ClassifierStyle } from './stylesheet/ClassifierStyle';
 import { RelationStyle } from './stylesheet/RelationStyle';
 
