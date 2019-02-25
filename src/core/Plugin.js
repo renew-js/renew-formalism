@@ -2,6 +2,9 @@
  * @abstract
  */
 export default class Plugin {
+    constructor () {
+        this.type = null;
+    }
     /**
      * @abstract
      * @return {MetaModel}
