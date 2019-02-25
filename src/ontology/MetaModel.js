@@ -17,6 +17,22 @@ export class MetaModel {
         return this.classifiers.concat(this.relations).concat(this.texts);
     }
 
+    getClassifier (type) {
+        return this.classifiers.find((classifier) => classifier.type === type);
+    }
+
+    getRelation (type) {
+        return this.relations.find((relation) => relation.type === type);
+    }
+
+    getArrowHead (type) {
+        return this.arrowHeads.find((arrowHead) => arrowHead.type === type);
+    }
+
+    getText (type) {
+        return this.texts.find((text) => text.type === type);
+    }
+
     /**
      * @param {Object} metaModel
      * @return {MetaModel}
