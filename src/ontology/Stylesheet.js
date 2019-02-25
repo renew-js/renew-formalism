@@ -22,6 +22,10 @@ export class Stylesheet {
             const relationStyle = RelationStyle.fromJson(style);
             stylesheet.styles[relationStyle.targetType] = relationStyle;
         });
+        ontology['arrow-head-styles'].forEach((style) => {
+            const arrowHeadStyle = ArrowHeadStyle.fromJson(style);
+            stylesheet.styles[arrowHeadStyle.targetType] = arrowHeadStyle;
+        });
         return stylesheet;
     }
 }

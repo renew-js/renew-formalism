@@ -7,8 +7,6 @@ export class RelationStyle {
 
     static fromJson (ontologyStyle) {
         const relationStyle = new RelationStyle(ontologyStyle['target-type']);
-        relationStyle.arrowStart = ontologyStyle['arrow-start'];
-        relationStyle.arrowEnd = ontologyStyle['arrow-end'];
         return relationStyle;
     }
 }

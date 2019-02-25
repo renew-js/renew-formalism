@@ -1,3 +1,4 @@
+import { ArrowHead } from './metamodel/ArrowHead';
 import { Classifier } from './metamodel/Classifier';
 import { Relation } from './metamodel/Relation';
 import { Text } from './metamodel/Text';
@@ -8,6 +9,7 @@ export class MetaModel {
         this.type = '';
         this.classifiers = [];
         this.relations = [];
+        this.arrowHeads = [];
         this.texts = [];
     }
 
@@ -27,6 +29,9 @@ export class MetaModel {
         });
         model.relations = (metaModel.relations || []).map((raw) => {
             return Relation.fromJson(raw);
+        });
+        model.arrowHeads = (metaModel['arrow-heads'] || []).map((raw) => {
+            return ArrowHead.fromJson(raw);
         });
         model.texts = (metaModel.texts || []).map((raw) => {
             return Text.fromJson(raw);
