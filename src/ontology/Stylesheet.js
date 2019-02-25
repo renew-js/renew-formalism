@@ -4,9 +4,7 @@ import { RelationStyle } from './stylesheet/RelationStyle';
 
 export class Stylesheet {
     constructor (props) {
-        this.classifierStyles = [];
-        this.relationStyles = [];
-        this.textStyles = [];
+        this.styles = {};
     }
 
     /**
@@ -17,10 +15,12 @@ export class Stylesheet {
     static fromJson (ontology) {
         const stylesheet = new Stylesheet();
         ontology['classifier-styles'].forEach((style) => {
-            stylesheet.classifierStyles.push(ClassifierStyle.fromJson(style));
+            const classifierStyle = ClassifierStyle.fromJson(style);
+            stylesheet.styles[classifierStyle.targetType] = classifierStyle;
         });
         ontology['relation-styles'].forEach((style) => {
-            stylesheet.relationStyles.push(RelationStyle.fromJson(style));
+            const relationStyle = RelationStyle.fromJson(style);
+            stylesheet.styles[relationStyle.targetType] = relationStyle;
         });
         return stylesheet;
     }
