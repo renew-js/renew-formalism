@@ -7,7 +7,7 @@ export class ToolConfiguration {
         this.targetModel = '';
         this.fileDescription = '';
         this.fileExtension = '';
-        this.toolMappings = [];
+        this.toolMappings = {};
     }
 
     /**
@@ -23,7 +23,8 @@ export class ToolConfiguration {
         configuration.fileExtension = toolConfiguration['file-extension'];
         try {
             toolConfiguration['tool-mappings'].forEach((mapping) => {
-                configuration.toolMappings.push(ToolMapping.fromJson(mapping));
+                const toolMapping = ToolMapping.fromJson(mapping);
+                configuration.toolMappings[toolMapping.targetType] = toolMapping;
             });
         } catch (e) {
             console.error(e);
