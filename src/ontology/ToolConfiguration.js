@@ -21,15 +21,10 @@ export class ToolConfiguration {
         configuration.targetModel = toolConfiguration['target-model'];
         configuration.fileDescription = toolConfiguration['file-description'];
         configuration.fileExtension = toolConfiguration['file-extension'];
-        try {
-            toolConfiguration['tool-mappings'].forEach((mapping) => {
-                const toolMapping = ToolMapping.fromJson(mapping);
-                configuration.toolMappings[toolMapping.targetType] = toolMapping;
-            });
-        } catch (e) {
-            console.error(e);
-            console.log('no tool mappings');
-        }
+        toolConfiguration['tool-mappings'].forEach((mapping) => {
+            const toolMapping = ToolMapping.fromJson(mapping);
+            configuration.toolMappings[toolMapping.targetType] = toolMapping;
+        });
         return configuration;
     }
 }
