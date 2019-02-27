@@ -5,8 +5,12 @@ import { TextStyle } from './stylesheet/TextStyle';
 
 
 export class Stylesheet {
-    constructor (props) {
+    constructor () {
         this.styles = {};
+    }
+
+    getStyle (type) {
+        return this.styles[type];
     }
 
     /**
