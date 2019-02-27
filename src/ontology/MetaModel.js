@@ -14,7 +14,14 @@ export class MetaModel {
     }
 
     getElements () {
-        return this.classifiers.concat(this.relations).concat(this.texts);
+        return []
+            .concat(this.classifiers)
+            .concat(this.relations)
+            .concat(this.texts);
+    }
+
+    getElement (type) {
+        return this.getElements().find((element) => element.type === type);
     }
 
     getClassifier (type) {
