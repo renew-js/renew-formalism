@@ -14,8 +14,8 @@ export class TextStyle {
 
     static fromJson (ontology) {
         const textStyle = new TextStyle(ontology['target-type']);
-        if (ontology.position) {
-            textStyle.position = ontology.position;
+        if (ontology.orientation) {
+            textStyle.orientation = ontology.orientation;
         }
         return textStyle;
     }
