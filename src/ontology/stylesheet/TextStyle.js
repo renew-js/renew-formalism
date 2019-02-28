@@ -1,6 +1,10 @@
 export class TextStyle {
     constructor (targetType) {
         this.targetType = targetType;
+        this.boundingBox = {
+            width: 220,
+            height: 28
+        };
         this.orientation = {
             position: 'center',
             margin: {
@@ -14,6 +18,9 @@ export class TextStyle {
 
     static fromJson (ontology) {
         const textStyle = new TextStyle(ontology['target-type']);
+        if (ontology['bounding-box']) {
+            textStyle.boundingBox = ontology['bounding-box'];
+        }
         if (ontology.orientation) {
             textStyle.orientation = ontology.orientation;
         }
