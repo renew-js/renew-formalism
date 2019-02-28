@@ -1,3 +1,5 @@
+import {Orientation} from "./orientation/Orientation";
+
 export class TextStyle {
     constructor (targetType) {
         this.targetType = targetType;
@@ -5,15 +7,7 @@ export class TextStyle {
             width: 220,
             height: 28
         };
-        this.orientation = {
-            position: 'center',
-            margin: {
-                top: 0,
-                right: 0,
-                bottom: 0,
-                left: 0,
-            }
-        };
+        this.orientation = new Orientation('center');
     }
 
     static fromJson (ontology) {
@@ -22,7 +16,7 @@ export class TextStyle {
             textStyle.boundingBox = ontology['bounding-box'];
         }
         if (ontology.orientation) {
-            textStyle.orientation = ontology.orientation;
+            textStyle.orientation = Orientation.fromJson(ontology.orientation);
         }
         return textStyle;
     }
