@@ -12,7 +12,7 @@
     "build": "rollup -c --environment BUILD:production"
   },
   "license": "MIT",
-  "repository": "https://github.com/uni-hamburg/renew-formalism",
+  "repository": "https://github.com/renew-js/renew-formalism",
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -20,7 +20,7 @@
     "chai": "^4.2.0",
     "eslint": "^5.12.0",
     "eslint-config-google": "^0.11.0",
-    "eslint-config-renew": "git+https://github.com/uni-hamburg/eslint-config-renew.git",
+    "eslint-config-renew": "git+https://github.com/renew-js/eslint-config-renew.git",
     "karma": "^3.1.4",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.1.0",
