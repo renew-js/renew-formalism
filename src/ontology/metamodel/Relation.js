@@ -1,6 +1,7 @@
 export class Relation {
     constructor (type) {
         this.type = type;
+        this.labels = [];
     }
 
     static fromJson (raw) {
@@ -8,6 +9,7 @@ export class Relation {
         relation.bind = raw.bind;
         relation.arrowStart = raw['arrow-start'];
         relation.arrowEnd = raw['arrow-end'];
+        raw.labels.forEach(label => relation.labels.push(label));
         return relation;
     }
 }
