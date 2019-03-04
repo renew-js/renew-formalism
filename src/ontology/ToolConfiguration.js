@@ -12,6 +12,14 @@ export class ToolConfiguration {
         this.contextToolMappings = {};
     }
 
+    getToolMappings () {
+        return Object.values(this.toolMappings);
+    }
+
+    getContextMappings () {
+        return Object.values(this.contextToolMappings);
+    }
+
     /**
      *
      * @param {Object} ontology
