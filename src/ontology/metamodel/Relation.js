@@ -2,6 +2,8 @@ export class Relation {
     constructor (type) {
         this.type = type;
         this.labels = [];
+        this.arrowStart = null;
+        this.arrowEnd = null;
     }
 
     static fromJson (raw) {

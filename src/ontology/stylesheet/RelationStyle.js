@@ -1,8 +1,6 @@
 export class RelationStyle {
     constructor (targetType) {
         this.targetType = targetType;
-        this.arrowStart = null;
-        this.arrowEnd = null;
     }
 
     static fromJson (ontologyStyle) {
