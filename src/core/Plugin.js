@@ -2,9 +2,11 @@
  * @abstract
  */
 export default class Plugin {
+
     constructor () {
         this.type = null;
     }
+
     /**
      * @abstract
      * @return {MetaModel}
@@ -28,4 +30,23 @@ export default class Plugin {
     getToolConfiguration () {
         return null;
     }
+
+    /**
+     * @abstract
+     * @param  {object} additionalData
+     * @return {string}
+     */
+    getExport (additionalData) {
+        return null;
+    }
+
+    /**
+     * @abstract
+     * @param  {object} data
+     * @return {object}
+     */
+    import (data) {
+        return null;
+    }
+
 }
