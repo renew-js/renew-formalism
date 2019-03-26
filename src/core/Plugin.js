@@ -42,10 +42,10 @@ export default class Plugin {
 
     /**
      * @abstract
-     * @param  {object} data
+     * @param  {string} format
      * @return {object}
      */
-    import (data) {
+    getImportParser (format) {
         return null;
     }
 
