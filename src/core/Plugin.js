@@ -33,10 +33,10 @@ export default class Plugin {
 
     /**
      * @abstract
-     * @param  {object} additionalData
+     * @param  {string} format
      * @return {string}
      */
-    getExport (additionalData) {
+    getSerializer (format) {
         return null;
     }
 
@@ -45,7 +45,7 @@ export default class Plugin {
      * @param  {string} format
      * @return {object}
      */
-    getImportParser (format) {
+    getParser (format) {
         return null;
     }
 
