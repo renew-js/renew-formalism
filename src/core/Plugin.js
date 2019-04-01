@@ -32,15 +32,22 @@ export default class Plugin {
     }
 
     /**
+     * Get the corresponding serializer for the given format.
+     * Serializers take export objects and turn them into string
+     * representations.
+     *
      * @abstract
      * @param  {string} format
-     * @return {string}
+     * @return {object}
      */
     getSerializer (format) {
         return null;
     }
 
     /**
+     * Get the corresponding parser for the given format.
+     * Parsers take a strings and turn them into importable objects.
+     *
      * @abstract
      * @param  {string} format
      * @return {object}
