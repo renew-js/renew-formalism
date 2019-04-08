@@ -3,6 +3,7 @@ export class Text {
         this.type = type;
         this.default = '';
         this.regex = '.+';
+        this.targets = [];
     }
 
     static fromJson (raw) {
@@ -12,6 +13,9 @@ export class Text {
         }
         if (raw.regex) {
             text.regex = raw.regex;
+        }
+        if (raw.targets) {
+            this.targets = raw.targets;
         }
         return text;
     }
