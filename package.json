@@ -1,7 +1,7 @@
 {
   "name": "renew-formalism",
   "description": "An abstract formalism to extend from",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "rollup -cw",
     "karma-chrome": "karma start karma.conf.js --log-level debug --browsers Chrome",
