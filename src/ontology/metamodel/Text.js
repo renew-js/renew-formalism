@@ -1,8 +1,10 @@
 export class Text {
+
     constructor (type) {
         this.type = type;
         this.default = '';
         this.regex = '.+';
+        this.targets = '*';
     }
 
     static fromJson (raw) {
@@ -13,6 +15,10 @@ export class Text {
         if (raw.regex) {
             text.regex = raw.regex;
         }
+        if (raw.targets) {
+            text.targets = raw.targets;
+        }
         return text;
     }
+
 }
