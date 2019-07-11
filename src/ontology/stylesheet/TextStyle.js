@@ -1,11 +1,12 @@
-import {Orientation} from "./orientation/Orientation";
+import { Orientation } from './orientation/Orientation';
 
 export class TextStyle {
+
     constructor (targetType) {
         this.targetType = targetType;
         this.boundingBox = {
-            width: 220,
-            height: 28
+            width: 150,
+            height: 50,
         };
         this.orientation = new Orientation('center');
     }
@@ -20,4 +21,5 @@ export class TextStyle {
         }
         return textStyle;
     }
+
 }
