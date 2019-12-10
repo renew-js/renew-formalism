@@ -9,8 +9,15 @@ export class Relation {
     static fromJson (raw) {
         const relation = new Relation(raw.type);
         relation.bind = raw.bind;
-        relation.arrowStart = raw['arrow-start'];
-        relation.arrowEnd = raw['arrow-end'];
+
+        if (raw['arrow-start']) {
+            relation.arrowStart = raw['arrow-start'];
+        }
+
+        if (raw['arrow-end']) {
+            relation.arrowEnd = raw['arrow-end'];
+        }
+
         return relation;
     }
 

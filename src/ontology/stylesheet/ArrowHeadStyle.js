@@ -6,10 +6,15 @@ export class ArrowHeadStyle {
 
     static fromJson (ontologyStyle) {
         const arrowHeadStyle = new ArrowHeadStyle(ontologyStyle['target-type']);
+
         if (ontologyStyle['ref']) {
             arrowHeadStyle.ref = ontologyStyle['ref'];
         }
-        arrowHeadStyle.representation = ontologyStyle['representation'];
+
+        if (ontologyStyle['representation']) {
+            arrowHeadStyle.representation = ontologyStyle['representation'];
+        }
+
         return arrowHeadStyle;
     }
 }

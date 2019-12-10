@@ -12,12 +12,15 @@ export class TextStyle {
 
     static fromJson (ontology) {
         const textStyle = new TextStyle(ontology['target-type']);
+
         if (ontology['bounding-box']) {
             textStyle.boundingBox = ontology['bounding-box'];
         }
+
         if (ontology.orientation) {
             textStyle.orientation = Orientation.fromJson(ontology.orientation);
         }
+
         return textStyle;
     }
 }

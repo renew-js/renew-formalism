@@ -7,8 +7,15 @@ export class ToolMapping {
 
     static fromJson (toolMapping) {
         const mapping = new ToolMapping(toolMapping['target-type']);
-        mapping.title = toolMapping['tool-title'];
-        mapping.icon = toolMapping['icon'];
+
+        if (toolMapping['tool-title']) {
+            mapping.title = toolMapping['tool-title'];
+        }
+
+        if (toolMapping['icon']) {
+            mapping.icon = toolMapping['icon'];
+        }
+
         return mapping;
     }
 }

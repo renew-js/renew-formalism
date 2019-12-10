@@ -27,18 +27,37 @@ export class ToolConfiguration {
      */
     static fromJson (ontology) {
         const config = new ToolConfiguration();
-        config.toolName = ontology['tool-name'];
-        config.targetModel = ontology['target-model'];
-        config.fileDescription = ontology['file-description'];
-        config.fileExtension = ontology['file-extension'];
-        ontology['tool-mappings'].forEach((mapping) => {
-            const toolMapping = ToolMapping.fromJson(mapping);
-            config.toolMappings[toolMapping.targetType] = toolMapping;
-        });
-        ontology['context-tool-mappings'].forEach((mapping) => {
-            const toolMapping = ContextToolMapping.fromJson(mapping);
-            config.contextToolMappings[toolMapping.targetType] = toolMapping;
-        });
+
+        if (ontology['tool-name']) {
+            config.toolName = ontology['tool-name'];
+        }
+
+        if (ontology['target-model']) {
+            config.targetModel = ontology['target-model'];
+        }
+
+        if (ontology['file-description']) {
+            config.fileDescription = ontology['file-description'];
+        }
+
+        if (ontology['file-extension']) {
+            config.fileExtension = ontology['file-extension'];
+        }
+
+        if (ontology['tool-mappings']) {
+            ontology['tool-mappings'].forEach((mapping) => {
+                const toolMapping = ToolMapping.fromJson(mapping);
+                config.toolMappings[toolMapping.targetType] = toolMapping;
+            });
+        }
+
+        if (ontology['context-tool-mappings']) {
+            ontology['context-tool-mappings'].forEach((mapping) => {
+                const toolMapping = ContextToolMapping.fromJson(mapping);
+                config.contextToolMappings[toolMapping.targetType] = toolMapping;
+            });
+        }
+
         return config;
     }
 }
