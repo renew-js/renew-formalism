@@ -16,14 +16,30 @@ export class ClassifierStyle {
 
     static fromJson (ontologyStyle) {
         let classifierStyle = new ClassifierStyle(ontologyStyle['target-type']);
-        classifierStyle.setDimension(
-            ontologyStyle['default-dimension'].width,
-            ontologyStyle['default-dimension'].height
-        );
-        classifierStyle.representation = ontologyStyle['representation'];
-        classifierStyle.backgroundColor = ontologyStyle['background-color'];
-        classifierStyle.lineColor = ontologyStyle['line-color'];
-        classifierStyle.lineStyle = ontologyStyle['line-style'];
+
+        if (ontologyStyle['default-dimension']) {
+            classifierStyle.setDimension(
+                ontologyStyle['default-dimension'].width,
+                ontologyStyle['default-dimension'].height
+            );
+        }
+
+        if (ontologyStyle['representation']) {
+            classifierStyle.representation = ontologyStyle['representation'];
+        }
+
+        if (ontologyStyle['background-color']) {
+            classifierStyle.backgroundColor = ontologyStyle['background-color'];
+        }
+
+        if (ontologyStyle['line-color']) {
+            classifierStyle.lineColor = ontologyStyle['line-color'];
+        }
+
+        if (ontologyStyle['line-style']) {
+            classifierStyle.lineStyle = ontologyStyle['line-style'];
+        }
+
         return classifierStyle;
     }
 }
